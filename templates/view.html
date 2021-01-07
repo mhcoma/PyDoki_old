@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div id = "content_title_box">
+	<span id = "content_title_text">{{ title }}</span>
+	<div class = "content_button_box">
+	<button class = "btn_content" type = "button" onclick = "location.href = '/edit/{{ article.title }}'">
+		{% if article.existence %}{{ language['content.button:edit'] }}{% else %}{{ language['content.button:create'] }}{% endif %}
+	</button>
+	{% if article.existence %}
+		<button class = "btn_content" type = "button" onclick = "location.href = '/history/{{ article.title }}'">{{ language['content.button:history'] }}</button>
+		<button class = "btn_content" type = "button" onclick = "location.href = '/delete/{{ article.title }}'">{{ language['content.button:delete'] }}</button>
+	{% endif %}
+	</div>
+</div>
+
+<hr/>
+
+<div id = "content">
+	{{ article.data|safe }}
+</div>
+
+{% endblock content %}

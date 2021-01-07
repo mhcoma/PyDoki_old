@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			{{ title }} - {{ settings.wikiname }}
+		</title>
+		<meta charset="utf-8">
+		<link rel = "stylesheet" href = "{{ url_for('static', filename='style.css') }}"/>
+
+		<script src = "{{ url_for('static', filename='script.js') }}"></script>
+		<script>
+			MathJax = {
+				tex : {
+					inlineMath: [['$$$', '$$$']],
+					displayMath: [['$$', '$$']]
+				},
+				options : {
+					renderActions: {
+						addMenu: []
+					}
+				}
+			};
+		</script>
+		<script type = "text/javascript" id = "MathJax-script" async src = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+		
+		<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.1/build/styles/dracula.min.css">
+		<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.1/build/highlight.min.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+
+		<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<header>
+			<div id = "header_center">
+				<div id = "header_center2">
+					<div id = "header_title_box">
+						<div id = "header_title_text">
+							<a href = "/">{{ settings.wikiname }}</a>
+						</div>
+						<button name = "" class = "btn_header" id = "header_menu_btn" onclick = "toggle_menu()"><img src = "{{ url_for('static', filename='symbol_menu.svg') }}"/></button>
+					</div>
+					<div id = "header_menu_box">
+						<div id = "header_menu_btn_shadow"></div>
+					</div>
+					<form id = "header_search_form" method = "get" action = "/search-go/">
+						<div id = "header_search_box">
+							<input type = "search" name = "search" id = "header_search_bar"> 
+							<div id = "header_search_btnbox">
+								<input type = "submit" value = "enter" style = "display: none;">
+								<button class = "btn_header" onclick="location.href = '/search/' + header_search_bar.value"><img src = "{{ url_for('static', filename='symbol_search.svg') }}"/></button>
+								<button class = "btn_header" onclick="location.href = '/' + header_search_bar.value"><img src = "{{ url_for('static', filename='symbol_go.svg') }}"/></button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</header>
+		<section>
+			<div id = "section_center">
+				<div id = "section_center2">
+					{% block content %}
+					{% endblock %}
+				</div>
+			</div>
+		</section>
+		<footer>
+
+		</footer>
+	</body>
+</html>

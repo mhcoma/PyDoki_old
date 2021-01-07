@@ -1,0 +1,34 @@
+{
+
+	"content.button:view" : "View",
+	"content.button:edit" : "Edit",
+	"content.button:create" : "Create",
+	"content.button:history" : "Delete",
+	
+	
+	"edit.title" : "Editing %s",
+	"edit.title-create" : "Creating %s",
+	"edit.button:cancel" : "Cancel",
+	"edit.button:save" : "Save",
+	"edit.editor.button:italic" : "Italic",
+	"edit.editor.button:bold" : "Bold",
+	"edit.editor.button:inline_code" : "Inline Code",
+	"edit.editor.button:blockquote" : "Blockquote",
+	"edit.editor.button:link" : "Link",
+	"edit.editor.button:special_characters" : "Special Characters",
+	"edit.editor.button:list" : "List",
+	"edit.editor.button:table" : "Table",
+	"edit.editor.button:fenced_code" : "Fenced Code",
+	"edit.editor.link.text:target" : "Target page or URL:",
+	"edit.editor.link.text:display" : "Text to display:",
+	"edit.editor.link.radio:wiki" : "To a wiki page",
+	"edit.editor.link.radio:web" : "To an external web page",
+	"edit.editor.link.button:cancel" : "Cancel",
+	"edit.editor.link.button:insert" : "Insert link",
+	
+
+	"history.title" : "Rivision history of %s",
+
+
+	"search.none" : "There were no results."
+}

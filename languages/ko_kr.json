@@ -1,0 +1,34 @@
+{
+
+	"content.button:view" : "보기",
+	"content.button:edit" : "편집",
+	"content.button:create" : "생성",
+	"content.button:history" : "역사",
+	"content.button:delete" : "삭제",
+
+	"edit.title" : "%s 편집하기",
+	"edit.title-create" : "%s 생성하기",
+	"edit.button:cancel" : "취소",
+	"edit.button:save" : "저장",
+	"edit.editor.button:italic" : "기울임꼴",
+	"edit.editor.button:bold" : "굵게",
+	"edit.editor.button:inline_code" : "인라인 코드",
+	"edit.editor.button:blockquote" : "인용문",
+	"edit.editor.button:link" : "링크",
+	"edit.editor.button:special_characters" : "특수문자",
+	"edit.editor.button:list" : "목록",
+	"edit.editor.button:table" : "표",
+	"edit.editor.button:fenced_code" : "코드 블럭",
+	"edit.editor.link.text:target" : "대상 문서명 또는 URL:",
+	"edit.editor.link.text:display" : "표시될 문장:",
+	"edit.editor.link.radio:wiki" : "위키 문서로 연결",
+	"edit.editor.link.radio:web" : "외부 웹 페이지로 연결",
+	"edit.editor.link.button:cancel" : "취소",
+	"edit.editor.link.button:insert" : "링크 삽입",
+	
+
+	"history.title" : "%s 역사 보기",
+
+
+	"search.none" : "검색 결과가 없습니다."
+}

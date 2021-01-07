@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<form name = "form" method = "post" action = "/edit-save/{{ article.title }}">
+	<div id = "content_title_box">
+		<span id = "content_title_text">{{ title }}</span>
+		<div class = "content_button_box">
+			<button class = "btn_content" type = "button" onclick = "location.href = '/view/{{ article.title }}'">{{ language['edit.button:cancel'] }}</button>
+			<input class = "btn_content" value = "{{ language['edit.button:save'] }}" type = "submit">
+		</div>
+	</div>
+
+	<hr/>
+
+	<div id = "editor_button_box">
+		<button class = "btn_editor" type = "button" onclick = "editor_select_insert_single('_', 'Italic Text', 1, 1)">{{ language['edit.editor.button:italic'] }}</button>
+		<button class = "btn_editor" type = "button" onclick = "editor_select_insert_single('__', 'Bold Text', 1, 1)">{{ language['edit.editor.button:bold'] }}</button>
+		<button class = "btn_editor" type = "button" onclick = "editor_select_insert_single('`', 'Inline Code', 1, 1)">{{ language['edit.editor.button:inline_code'] }}</button>
+		<button class = "btn_editor" type = "button" onclick = "editor_select_insert_single('>', 'Blockquote', 0, 1)">{{ language['edit.editor.button:blockquote'] }}</button>
+		<button class = "btn_editor" type = "button" onclick = "editor_extend_link(this)">{{ language['edit.editor.button:link'] }}</button>
+		<button class = "btn_editor" type = "button" onclick = "editor_extend_box('editor_special_chracters', this)">{{ language['edit.editor.button:special_characters'] }}</button>
+		<button class = "btn_editor" type = "button" onclick = "editor_extend_box('editor_list', this)">{{ language['edit.editor.button:list'] }}</button>
+		<button class = "btn_editor" type = "button" onclick = "editor_extend_box('editor_table', this)">{{ language['edit.editor.button:table'] }}</button>
+		<button class = "btn_editor" type = "button" onclick = "editor_extend_box('editor_fenced_code', this)">{{ language['edit.editor.button:fenced_code'] }}</button>
+		<div id = "editor_section_box">
+			<div class = "editor_section" id = "editor_link">
+				<label class = "lbl_editor_section">{{ language['edit.editor.link.text:target'] }}
+					<input class = "text_editor_section" type = "text" id = "editor_link_target">
+				</label>
+				<label class = "lbl_editor_section">{{ language['edit.editor.link.text:display'] }}
+					<input class = "text_editor_section" type = "text" id = "editor_link_display">
+				</label>
+				<label class = "lbl_editor_section">
+					<input class = "radio_editor_section" type = "radio" name = "editor_link_radio" value = "link_wiki" checked>{{ language['edit.editor.link.radio:wiki'] }}
+				</label>
+				<label class = "lbl_editor_section">
+					<input class = "radio_editor_section" type = "radio" name = "editor_link_radio" value = "link_web">{{ language['edit.editor.link.radio:web'] }}
+				</label>
+				<div class = "editor_section_button_box">
+					<button class = "btn_editor_section" type = "button" onclick = "editor_close_section()">{{ language['edit.editor.link.button:cancel'] }}</button>
+					<button class = "btn_editor_section" type = "button" onclick = "editor_insert_link()">{{ language['edit.editor.link.button:insert'] }}</button>
+				</div>
+			</div>
+			<div class = "editor_section" id = "editor_special_chracters">
+				특수문자
+			</div>
+			<div class = "editor_section" id = "editor_list">
+				목록
+			</div>
+			<div class = "editor_section" id = "editor_table">
+				표
+			</div>
+			<div class = "editor_section" id = "editor_fenced_code">
+				코드블럭
+			</div>
+		</div>
+	</div>
+	
+	<textarea name = "text" id = "edit_area" onkeydown = "editor_keydown(event)" onkeyup = "editor_keyup(event)" autofocus>{{ article.raw_data|safe }}</textarea>
+</form>
+
+{% endblock content %}
