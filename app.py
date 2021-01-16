@@ -1,6 +1,5 @@
 import datetime
 import json
-from module.dokitable import DokiTableExtension
 import os
 
 import flask
@@ -11,7 +10,6 @@ from markdown.extensions.fenced_code import FencedCodeExtension
 
 from module.tocplus import TocPlusExtension, do_nothing
 from module.wikilinksplus import WikiLinkPlusExtension
-from module.dokitable import DokiTableExtension
 
 application = flask.Flask(__name__)
 
@@ -164,7 +162,7 @@ def view(title):
 @application.route('/edit/<path:title>')
 def edit(title):
 	article = Article(title)
-	title = (language['edit.title'] if article.existence else language['edit.title.create'])%title
+	title = (language['edit.title'] if article.existence else language['edit.title-create'])%title
 	out = flask.render_template('edit.html', settings = settings, language = language, article = article, title = title)
 	return out
 
@@ -213,5 +211,5 @@ def index():
 	return flask.redirect('/view/%s'%name)
 
 if __name__ == '__main__':
-	application.run(host = '0.0.0.0', port = 80)
+	application.run(host = '0.0.0.0', port = 8080)
 

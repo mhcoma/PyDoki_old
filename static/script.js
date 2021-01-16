@@ -180,6 +180,7 @@ function editor_select_link() {
 	selection_end = edit_area.selectionEnd;
 
 	editor_link_target.value = edit_area.value.substring(selection_start, selection_end);
+	editor_link_display.value = ''
 }
 
 function editor_insert_link() {
@@ -211,6 +212,7 @@ function editor_insert_link() {
 	}
 	edit_area.focus();
 	document.execCommand('insertText', false, link_text);
+
 	editor_close_section()
 }
 
