@@ -143,8 +143,7 @@ class Article:
 					title = 'Table of Contents',
 					slugify = do_nothing
 				),
-				DokiTableExtension(),
-				'legacy_em', 'sane_lists', 'fenced_code'
+				'legacy_em', 'sane_lists'
 			]
 		)
 	
