@@ -68,7 +68,7 @@ class Article:
 			self.convert_markdown()
 		
 		if history:
-			self.view_history()
+			self.view_history_list()
 
 	def save(self):
 		now = datetime.datetime.utcnow().isoformat()
@@ -141,11 +141,11 @@ class Article:
 					title = 'Table of Contents',
 					slugify = do_nothing
 				),
-				'legacy_em', 'sane_lists'
+				'legacy_em', 'sane_lists', 'tables'
 			]
 		)
 	
-	def view_history(self):
+	def view_history_list(self):
 		self.history_out = ""
 		for i in self.history_data:
 			self.history_out += ("edition : %d"%i['edition'] + "<br/>editor : " + i['editor'] + "<br/>date : " + i['date'] + "<br/><br/>")
@@ -211,5 +211,5 @@ def index():
 	return flask.redirect('/view/%s'%name)
 
 if __name__ == '__main__':
-	application.run(host = '0.0.0.0', port = 8080)
+	application.run(host = '127.0.0.1', port = 8080)
 
