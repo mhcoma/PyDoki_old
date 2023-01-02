@@ -458,7 +458,7 @@ section {
 	font-family: D2Coding, courier, monospace;
 	width: calc(100% - 16px);
 	height: 512px;
-    resize: none;
+	resize: none;
 	font-size : 16px;
 	padding: 8px;
 	line-height: 24px;
